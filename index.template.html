@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Fashion Website</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fashion Website by Meow</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.w3-sidebar a {
+  font-family: "Roboto", sans-serif
+}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {
+  font-family: "Montserrat", sans-serif;
+}
+
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 150px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+input[type=text] {
+  width: 200px;
+  box-sizing: border-box;
+  border: 1px solid rgb(33, 81, 97);
+  border-radius: 5px;
+  font-size: 12px;
+  background-color: rgba(2, 9, 255, 0.1);
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 10px 12px 20px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: black;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
+</head>
+<body class="w3-content" style="max-width:1200px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-container w3-wide w3-animate-zoom w3-hover-opacity w3-padding-32 w3-display-container"><img src="https://1.bp.blogspot.com/-1Yl3ai4MyPc/XW_DySrA4dI/AAAAAAAUzeY/P6qBfLbh5P4duN6KN0OSzJmOCZEj8CbigCLcBGAs/s1600/AW3993864_04.gif" alt="Logo_MeowNalini" style="width: 100px"></h3>
+  </div>
+  <div class="w3-padding-44 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="#shirts" class="w3-bar-item w3-button w3-white w3-left-align w3-text-dark-gray">SKIRTS</a>
+    <a href="#dresses" class="w3-bar-item w3-button w3-white w3-left-align w3-text-dark-gray">DRESSES</a>
+    <a href="#jeans" class="w3-bar-item w3-button w3-white w3-left-align w3-text-dark-gray">JEANS </a>
+    <a href="#jackets" class="w3-bar-item w3-button w3-white w3-left-align w3-text-dark-gray">COATS & JACKETS</a>
+    <a href="#sportwear" class="w3-bar-item w3-button w3-white w3-left-align w3-text-dark-gray">SPORT WEAR</a>
+    <a href="#blazers" class="w3-bar-item w3-button w3-white w3-left-align w3-text-dark-gray">BLAZERS</a>
+    <ul class="class=w3-bar-item w3-button w3-white w3-left-align w3-text-dark-gray dropdown-btn" id="shoes">SHOES <i class="fa fa-caret-down"></i>
+      <a class="w3-bar-item w3-button w3-white w3-left-align w3-text-dark-gray" href="#">Athletic Shoes</a>
+      <a class="w3-bar-item w3-button w3-white w3-left-align w3-text-dark-gray" href="#">Boots</a>
+      <a class="w3-bar-item w3-button w3-white w3-left-align w3-text-dark-gray" href="#">Women Heels</a>
+    </ul>
+  </div>
+</div>
+  <a href="#footer" class="w3-bar-item w3-button w3-padding w3-white w3-left-align w3-text-dark-gray" style="font-weight:bold">CONTACT</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding w3-white w3-left-align w3-text-dark-gray" style="font-weight:bold" onclick="document.getElementById('newsletter').style.display='block'">NEWSLETTER</a> 
+  <a href="#footer"  class="w3-bar-item w3-button w3-padding w3-white w3-left-align w3-text-dark-gray" style="font-weight:bold">SUBSCRIBE</a>
+
+
+</div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge" id="myHeader">
+  <div class="w3-bar-item w3-padding-24 w3-wide"><img src="https://4.bp.blogspot.com/-fp-LuzNluok/XHnYfw5QuTI/AAAAAABEfp0/7WdO6fnGZ3oIDAutFJ-BVFK8cGK8lYZxQCLcBGAs/s1600/AW3594167_14.gif" alt="Logo_MeowNalini" style="width: 30px"></div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge" id="sticky">
+    <p class="w3-left w3-padding-large w3-text-dark-grey w3-animate-zoom font-weight">MEOW FASHION</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <input type="text" name="search" placeholder="Search.." id="input">
+    </p>
+  </header>
+
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <img src="https://marketplace.canva.com/EAD2962NKnQ/2/0/1600w/canva-rainbow-gradient-pink-and-purple-virtual-background-_Tcjok-d9b4.jpg" alt="backgroundIMG" style="width:100%">
+    <div class="w3-display-topleft w3-text-blue-grey" style="padding:24px 48px">
+      <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
+      <h1 class="w3-hide-large w3-hide-medium">FASHION ARRIVALS</h1>
+      <h1 class="w3-hide-small">COLLECTION OF JULY 2023</h1>
+      <p><a href="#skirts" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
+    </div>
+  </div>
+
+  <div class="w3-container w3-text-dark-gray w3-padding-44" id="skirts">
+    <h3 class="w3-animate-zoom">SHIRTS</h3>
+    <p>8 items</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row w3-display-container">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Casual Shirts.jpg" style="width:100%">
+        <p>Casual Shirts<br><b>$24.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Check Shirts.jpg" style="width:100%">
+        <p>Check Shirts<br><b>$19.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="https://assets.codepen.io/10602517/Denim Shirts.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Denim Shirts<br><b>$19.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Stripe Shirts.jpg" style="width:100%">
+        <p>Stripe Shirts<br><b>$20.50</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Plain Shirts.jpg" style="width:100%">
+        <p>Plain Shirts<br><b>$20.50</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="https://assets.codepen.io/10602517/Smart Shirts.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Smart Shirts<br><b class="w3-text-red">$14.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Printed Shirts.jpg" style="width:100%">
+        <p>Printed Shirts<br><b>$14.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Short Sleeve Shirts.jpg" style="width:100%">
+        <p>Short Sleeve Shirts<br><b>$24.99</b></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dresses section -->
+  <div class="w3-container w3-xlarge w3-padding-44">
+    <p class="w3-left w3-animate-zoom">DRESSES</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
+  </div>
+
+  <div class="w3-container w3-text-grey" id="dresses">
+    <p>8 items</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row w3-display-container">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Bridesmaid Dresses.jpg" style="width:100%">
+        <p>Bridesmaid Dresses<br><b>$54.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Day Dresses.jpg" style="width:100%">
+        <p>Day Dresses<br><b>$19.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="https://assets.codepen.io/10602517/Dresses for Weddings.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Weddings Dresses<br><b>$79.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Evening Dresses.jpg" style="width:100%">
+        <p>Evening Dresses<br><b>$20.50</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Maxi Dresses.jpg" style="width:100%">
+        <p>Maxi Dresses<br><b>$25.50</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="https://assets.codepen.io/10602517/Midi Dresses.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Midi Dresses<br><del>$29.99</del><br><b class="w3-text-red">$24.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Mini Dresses.jpg" style="width:100%">
+        <p>Mini Dresses<br><b>$19.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Party Dresses.jpg" style="width:100%">
+        <p>Party Dresses<br><b>$29.99</b></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JEANS section -->
+  <div class="w3-container w3-xlarge w3-padding-44">
+    <p class="w3-left">JEANS</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
+  </div>
+
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p>8 items</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row w3-display-container">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Baggy Jeans.jpg" style="width:100%">
+        <p>Baggy Jeans<br><b>$24.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Straight Fit Jeans.jpg" style="width:100%">
+        <p>Straight Fit Jeans<br><b>$29.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="https://assets.codepen.io/10602517/Capri.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Capri<br><b>$19.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Cargo Fit.jpg" style="width:100%">
+        <p>Cargo Fit<br><b>$24.50</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Straight Leg Jeans.jpg" style="width:100%">
+        <p>Straight Leg Jeans<br><b>$30.50</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="https://assets.codepen.io/10602517/Gaucho.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Gaucho<br><del>$29.99</del><br><b class="w3-text-red">$24.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Retro Jeans.jpg" style="width:100%">
+        <p>Retro Jeans<br><b>$34.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Skinny Jeans.jpg" style="width:100%">
+        <p>Skinny Jeans<br><b>$27.99</b></p>
+      </div>
+    </div>
+  </div>
+
+    <!-- Jackets section -->
+    <div class="w3-container w3-xlarge w3-padding-44">
+      <p class="w3-left w3-animate-zoom">JACKETS</p>
+      <p class="w3-right">
+        <i class="fa fa-shopping-cart w3-margin-right"></i>
+        <i class="fa fa-search"></i>
+      </p>
+    </div>
+  
+    <div class="w3-container w3-text-grey" id="jackets">
+      <p>8 items</p>
+    </div>
+  
+    <!-- Product grid -->
+    <div class="w3-row w3-display-container">
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <img src="https://assets.codepen.io/10602517/Coats.jpg" style="width:100%">
+          <p>Coats<br><b>$34.99</b></p>
+        </div>
+        <div class="w3-container">
+          <img src="https://assets.codepen.io/10602517/Faux Fur Coat.jpg" style="width:100%">
+          <p>Faux Fur Coat<br><b>$49.99</b></p>
+        </div>
+      </div>
+  
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="https://assets.codepen.io/10602517/Jackets.jpg" style="width:100%">
+            <span class="w3-tag w3-display-topleft">New</span>
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Jackets<br><b>$39.99</b></p>
+        </div>
+        <div class="w3-container">
+          <img src="https://assets.codepen.io/10602517/Leather Jackets.jpg" style="width:100%">
+          <p>Leather Jackets<br><b>$40.50</b></p>
+        </div>
+      </div>
+  
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <img src="https://assets.codepen.io/10602517/Puffer Jackets.jpg" style="width:100%">
+          <p>Puffer Jackets<br><b>$30.50</b></p>
+        </div>
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="https://assets.codepen.io/10602517/Rain Coats.jpg" style="width:100%">
+            <span class="w3-tag w3-display-topleft">Sale</span>
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Rain Coats<br><del>$39.99</del><br><b class="w3-text-red">$34.99</b></p>
+        </div>
+      </div>
+  
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <img src="https://assets.codepen.io/10602517/Shackets.jpg" style="width:100%">
+          <p>Shackets<br><b>$29.99</b></p>
+        </div>
+        <div class="w3-container">
+          <img src="https://assets.codepen.io/10602517/Trench Coats.jpg" style="width:100%">
+          <p>Trench Coats<br><b>$44.99</b></p>
+        </div>
+      </div>
+    </div>
+
+  <!-- Sport Wear section -->
+  <div class="w3-container w3-xlarge w3-padding-44">
+    <p class="w3-left w3-animate-zoom">SPORT WEAR</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
+  </div>
+
+  <div class="w3-container w3-text-grey" id="sportwear">
+    <p>8 items</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row w3-display-container">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Gym and Training.jpg" style="width:100%">
+        <p>Gym and Training<br><b>$24.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Sport Bras.jpg" style="width:100%">
+        <p>Sport Bras<br><b>$19.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="https://assets.codepen.io/10602517/Leggings.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Leggings<br><b>$19.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Outdoors.jpg" style="width:100%">
+        <p>Outdoor Clothes<br><b>$30.50</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Running.jpg" style="width:100%">
+        <p>Running Clothes<br><b>$30.50</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="https://assets.codepen.io/10602517/Shoes.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Sport Shoes<br><del>$54,99</del><br><b class="w3-text-red">$44.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Shorts.jpg" style="width:100%">
+        <p>Sport Short<br><b>$24.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Ski and SnowBoard.jpg" style="width:100%">
+        <p>Ski and SnowBoard<br><b>$49.99</b></p>
+      </div>
+    </div>
+  </div>
+
+    <!-- Blazers section -->
+    <div class="w3-container w3-xlarge">
+      <p class="w3-left w3-animate-zoom">BLAZERS</p>
+      <p class="w3-right">
+        <i class="fa fa-shopping-cart w3-margin-right"></i>
+        <i class="fa fa-search"></i>
+      </p>
+    </div>
+  
+    <div class="w3-container w3-text-grey" id="blazers">
+      <p>8 items</p>
+    </div>
+  
+    <!-- Product grid -->
+    <div class="w3-row w3-display-container">
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <img src="https://assets.codepen.io/10602517/Belted Blazers.jpg" style="width:100%">
+          <p>Belted Blazers<br><b>$34.99</b></p>
+        </div>
+        <div class="w3-container">
+          <img src="https://assets.codepen.io/10602517/Blazer Dresses.jpg" style="width:100%">
+          <p>Blazer Dresses<br><b>$29.99</b></p>
+        </div>
+      </div>
+  
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="https://assets.codepen.io/10602517/Cape Blazers.jpg" style="width:100%">
+            <span class="w3-tag w3-display-topleft">New</span>
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Cape Blazers<br><b>$35.99</b></p>
+        </div>
+        <div class="w3-container">
+          <img src="https://assets.codepen.io/10602517/Cropped Blazers.jpg" style="width:100%">
+          <p>Cropped Blazers<br><b>$25.50</b></p>
+        </div>
+      </div>
+  
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <img src="https://assets.codepen.io/10602517/Double-Breasted Blazers.jpg" style="width:100%">
+          <p>Double-Breasted Blazers<br><b>$40.50</b></p>
+        </div>
+        <div class="w3-container">
+          <div class="w3-display-container">
+            <img src="https://assets.codepen.io/10602517/Oversized Blazers.jpg" style="width:100%">
+            <span class="w3-tag w3-display-topleft">Sale</span>
+            <div class="w3-display-middle w3-display-hover">
+              <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+          <p>Oversized Blazers<br><del>$34.00</del><br><b class="w3-text-red">$29.99</b></p>
+        </div>
+      </div>
+  
+      <div class="w3-col l3 s6">
+        <div class="w3-container">
+          <img src="https://assets.codepen.io/10602517/Peplum Blazers.jpg" style="width:100%">
+          <p>Peplum Blazers<br><b>$24.99</b></p>
+        </div>
+        <div class="w3-container">
+          <img src="https://assets.codepen.io/10602517/Traditional Blazers.jpg" style="width:100%">
+          <p>Traditional Blazers<br><b>$29.99</b></p>
+        </div>
+      </div>
+    </div>
+
+  <!-- SHOES section -->
+
+  <div class="w3-container w3-xlarge">
+    <p class="w3-left w3-animate-zoom">SHOES</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
+  </div>
+
+  <div class="w3-container w3-text-grey" id="shoes">
+    <p>8 items</p>
+  </div>
+
+  <div>
+    <p>Athletic Shoes</p>
+  <!-- Product grid -->
+  <div class="w3-row w3-display-container">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Basketball Shoes.jpg" style="width:100%">
+        <p>Basketball Shoes<br><b>$44.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Chuck Taylor.jpg" style="width:100%">
+        <p>Chuck Taylor<br><b>$49.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="https://assets.codepen.io/10602517/Climbing Shoes.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Climbing Shoes<br><b>$39.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Golf Shoes.jpg" style="width:100%">
+        <p>Golf Shoes<br><b>$40.50</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/High-tops.jpg" style="width:100%">
+        <p>High-tops<br><b>$42.50</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="https://assets.codepen.io/10602517/Ice-skates.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Ice-skates<br><del>$39.99</del><br><b class="w3-text-red">$34.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Old Skool.jpg" style="width:100%">
+        <p>Old Skool<br><b>$34.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="https://assets.codepen.io/10602517/Running Shoes.jpg" style="width:100%">
+        <p>Running Shoes<br><b>$39.99</b></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <p>Boots</p>
+<!-- Product grid -->
+<div class="w3-row w3-display-container">
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <img src="https://assets.codepen.io/10602517/Army Boots.jpg" style="width:100%">
+      <p>Army Boots<br><b>$44.99</b></p>
+    </div>
+    <div class="w3-container">
+      <img src="https://assets.codepen.io/10602517/Boots.jpg" style="width:100%">
+      <p>Boots<br><b>$39.99</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="https://assets.codepen.io/10602517/Combat Boots.jpg" style="width:100%">
+        <span class="w3-tag w3-display-topleft w3-red">New</span>
+        <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Combat Boots<br><b>$49.99</b></p>
+    </div>
+    <div class="w3-container">
+      <img src="https://assets.codepen.io/10602517/Cowboy Boots.jpg" style="width:100%">
+      <p>Cowboy Boots<br><b>$54.50</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <img src="https://assets.codepen.io/10602517/Insulated Boots.jpg" style="width:100%">
+      <p>Insulated Boots<br><b>$49.50</b></p>
+    </div>
+    <div class="w3-container">
+      <div class="w3-display-container">
+        <img src="https://assets.codepen.io/10602517/Knee high Boots.jpg" style="width:100%">
+        <span class="w3-tag w3-display-topleft w3-red">Sale</span>
+        <div class="w3-display-middle w3-display-hover">
+          <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
+      <p>Knee high Boots<br><del>$54.00</del><br><b class="w3-text-red">$44.99</b></p>
+    </div>
+  </div>
+
+  <div class="w3-col l3 s6">
+    <div class="w3-container">
+      <img src="https://assets.codepen.io/10602517/Timberland Boots.jpg" style="width:100%">
+      <p>Timberland Boots<br><b>$39.99</b></p>
+    </div>
+    <div class="w3-container">
+      <img src="https://assets.codepen.io/10602517/Wellington Boots.jpg" style="width:100%">
+      <p>Wellington Boots<br><b>$44.99</b></p>
+    </div>
+  </div>
+</div>
+</div>
+
+  <!-- Subscribe section -->
+  <div class="w3-container w3-black w3-padding-64">
+    <h1>Subscribe</h1>
+    <p>To get special offers and VIP treatment:</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
+    <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="w3-padding-64 w3-light-grey w3-smaill w3-center" id="footer">
+    <div class="w3-row-padding">
+      <div class="w3-col s4">
+        <h4>Contact</h4>
+        <p>Questions? Go ahead.</p>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
+          <button type="submit" class="w3-button w3-block w3-black">Send</button>
+        </form>
+      </div>
+
+      <div class="w3-col s4">
+        <h4>About</h4>
+        <p><a href="#">About us</a></p>
+        <p><a href="#">We're hiring</a></p>
+        <p><a href="#">Support</a></p>
+        <p><a href="#">Find store</a></p>
+        <p><a href="#">Shipment</a></p>
+        <p><a href="checkout.html">Payment</a></p>
+        <p><a href="#">Gift card</a></p>
+        <p><a href="#">Return</a></p>
+        <p><a href="#">Need Help</a></p>
+      </div>
+
+      <div class="w3-col s4 w3-justify">
+        <h4>Store</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> NALINI FASHION</p>
+        <p><i class="fa fa-fw fa-phone"></i> (+84) 385 806 448</p>
+        <p><i class="fa fa-fw fa-envelope"></i> Meow.Nalini@gmail.com</p>
+        <h4>We accept</h4>
+        <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+        <br>
+        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+        <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
+        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+        <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
+      </div>
+    </div>
+  </footer>
+
+  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://github.com/Nalini1998" title="@Meow.Nalini98" target="_blank" class="w3-hover-opacity">Meow.Nalini98</a></div>
+
+  <!-- End page content -->
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">NEWSLETTER</h2>
+      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
+
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the header
+var header = document.getElementById("myHeader");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+</script>
+
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
