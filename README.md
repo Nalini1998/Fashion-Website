@@ -28,7 +28,7 @@ Alternatively, you can download the ZIP file of this project and extract it to y
 
 ### Preview: 
 
-<img src="https://codepen.io/Nalini1998/live/VwVNNdM/209ac5086c75e51c0e29b773e8c9dba7" alt="Fashion Website" title="Fashion Website">
+<img src="[https://codepen.io/Nalini1998/live/VwVNNdM/209ac5086c75e51c0e29b773e8c9dba7](https://github.com/Nalini1998/Fashion-Website/blob/main/Website_Fashion%20Shop.PNG)" alt="Fashion Website" title="Fashion Website">
 
 <br>
 
